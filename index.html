@@ -622,7 +622,7 @@
       // 3. Save to Supabase (now includes the city!)
       const { error: dbError } = await _supabase
         .from('leads')
-        .insert([{ email: emailValue, city: selectedHub }]);
+        .insert([{ email: emailValue, hub_preference: selectedHub }]);
 
       if (dbError) throw dbError;
 
