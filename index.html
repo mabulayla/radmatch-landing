@@ -184,6 +184,38 @@
     }
     .subhero strong { color: var(--text-primary); font-weight: 600; }
 
+    /* ── FREE TAG ── */
+    .free-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--emerald-light);
+      margin-top: -10px; margin-bottom: 24px;
+    }
+
+    /* ── JUMP BUTTON ── */
+    .btn-jump {
+      display: inline-block;
+      margin-top: 20px; margin-bottom: 4px;
+      padding: 13px 28px;
+      background: transparent;
+      border: 1px solid var(--emerald);
+      border-radius: 3px;
+      font-family: 'DM Mono', monospace; font-size: 0.78rem;
+      font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--emerald-light);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+    }
+    .btn-jump:hover {
+      background: rgba(5, 150, 105, 0.12);
+      color: #fff;
+      box-shadow: 0 0 18px rgba(5, 150, 105, 0.3);
+      transform: translateY(-1px);
+    }
+    .btn-jump:active { transform: translateY(0); }
+
     /* ── DIVIDER ── */
     .divider {
       width: 100%; height: 1px; margin: 40px 0;
@@ -474,11 +506,13 @@
     <!-- HERO -->
     <p class="hero-eyebrow">Expanding Soon</p>
     <h1>THE BREAK ROOM<br>IS <em>EMPTY.</em></h1>
+    <p class="free-tag">100% Free for Techs &amp; Students.</p>
     <p class="subhero">
       Let's fix that. Join the exclusive waitlist for <strong>RadMatch</strong>—the first dating,
       networking, and community platform built
       <strong>exclusively for verified Radiology professionals.</strong>
     </p>
+    <a href="#form-block" class="btn-jump">Sign Up Free</a>
 
     <div class="divider"></div>
 
@@ -543,7 +577,7 @@
           type="email"
           id="email-input"
           class="form-input"
-          placeholder="your.email@hospital.com"
+          placeholder="your.personal.email@gmail.com"
           autocomplete="email"
         />
         <!-- FIX: onclick calls handleSubmit — no form wrap needed, no default submit conflict -->
