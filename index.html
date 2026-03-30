@@ -256,6 +256,7 @@
     .hub-pill:nth-child(2) .hub-dot { animation-delay: 0.5s; }
     .hub-pill:nth-child(3) .hub-dot { animation-delay: 1.0s; }
     .hub-pill:nth-child(4) .hub-dot { animation-delay: 1.5s; }
+    .hub-pill:nth-child(5) .hub-dot { animation-delay: 2.0s; }
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
     /* ── MODES ── */
@@ -525,6 +526,7 @@
       <div class="hub-pill"><span class="hub-dot"></span>Detroit, MI</div>
       <div class="hub-pill"><span class="hub-dot"></span>San Francisco, CA</div>
       <div class="hub-pill"><span class="hub-dot"></span>Phoenix, AZ</div>
+      <div class="hub-pill"><span class="hub-dot"></span>Bay Area, CA</div>
     </div>
 
     <!-- THREE MODES -->
@@ -578,6 +580,10 @@
         <button type="button" class="hub-toggle" id="hub-phoenix" onclick="selectHub('Phoenix, AZ')">
           <i class="fa-solid fa-check check-icon"></i>
           Phoenix, AZ
+        </button>
+        <button type="button" class="hub-toggle" id="hub-bay-area" onclick="selectHub('Bay Area, CA')">
+          <i class="fa-solid fa-check check-icon"></i>
+          Bay Area, CA
         </button>
       </div>
       <!-- FIX: field-error paragraph is always in DOM; .show class toggles visibility -->
@@ -635,6 +641,7 @@
     document.getElementById('hub-detroit').classList.remove('selected');
     document.getElementById('hub-san-francisco').classList.remove('selected');
     document.getElementById('hub-phoenix').classList.remove('selected');
+    document.getElementById('hub-bay-area').classList.remove('selected');
     document.getElementById('hub-error').classList.remove('show');
 
     // Highlight the clicked button
@@ -646,6 +653,8 @@
       document.getElementById('hub-san-francisco').classList.add('selected');
     } else if (hubName === 'Phoenix, AZ') {
       document.getElementById('hub-phoenix').classList.add('selected');
+    } else if (hubName === 'Bay Area, CA') {
+      document.getElementById('hub-bay-area').classList.add('selected');
     }
   }
 
