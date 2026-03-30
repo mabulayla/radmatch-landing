@@ -254,6 +254,8 @@
       animation: blink 2s ease-in-out infinite;
     }
     .hub-pill:nth-child(2) .hub-dot { animation-delay: 0.5s; }
+    .hub-pill:nth-child(3) .hub-dot { animation-delay: 1.0s; }
+    .hub-pill:nth-child(4) .hub-dot { animation-delay: 1.5s; }
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
     /* ── MODES ── */
@@ -521,6 +523,8 @@
     <div class="hubs">
       <div class="hub-pill"><span class="hub-dot"></span>Columbus, OH</div>
       <div class="hub-pill"><span class="hub-dot"></span>Detroit, MI</div>
+      <div class="hub-pill"><span class="hub-dot"></span>San Francisco, CA</div>
+      <div class="hub-pill"><span class="hub-dot"></span>Phoenix, AZ</div>
     </div>
 
     <!-- THREE MODES -->
@@ -566,6 +570,14 @@
         <button type="button" class="hub-toggle" id="hub-detroit" onclick="selectHub('Detroit, MI')">
           <i class="fa-solid fa-check check-icon"></i>
           Detroit, MI
+        </button>
+        <button type="button" class="hub-toggle" id="hub-san-francisco" onclick="selectHub('San Francisco, CA')">
+          <i class="fa-solid fa-check check-icon"></i>
+          San Francisco, CA
+        </button>
+        <button type="button" class="hub-toggle" id="hub-phoenix" onclick="selectHub('Phoenix, AZ')">
+          <i class="fa-solid fa-check check-icon"></i>
+          Phoenix, AZ
         </button>
       </div>
       <!-- FIX: field-error paragraph is always in DOM; .show class toggles visibility -->
@@ -621,13 +633,19 @@
     // Reset buttons
     document.getElementById('hub-columbus').classList.remove('selected');
     document.getElementById('hub-detroit').classList.remove('selected');
+    document.getElementById('hub-san-francisco').classList.remove('selected');
+    document.getElementById('hub-phoenix').classList.remove('selected');
     document.getElementById('hub-error').classList.remove('show');
-    
+
     // Highlight the clicked button
     if (hubName === 'Columbus, OH') {
       document.getElementById('hub-columbus').classList.add('selected');
     } else if (hubName === 'Detroit, MI') {
       document.getElementById('hub-detroit').classList.add('selected');
+    } else if (hubName === 'San Francisco, CA') {
+      document.getElementById('hub-san-francisco').classList.add('selected');
+    } else if (hubName === 'Phoenix, AZ') {
+      document.getElementById('hub-phoenix').classList.add('selected');
     }
   }
 
