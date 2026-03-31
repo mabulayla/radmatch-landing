@@ -698,7 +698,8 @@
 
       // 4. Trigger the Welcome Email
       const { error: funcError } = await _supabase.functions.invoke('send-welcome-email', {
-        body: { email: emailValue }
+        body: JSON.stringify({ email: emailValue, hub: selectedHub }),
+        headers: { 'Content-Type': 'application/json' }
       });
 
       if (funcError) console.error('Email trigger error:', funcError);
@@ -717,7 +718,7 @@
       console.error('Error:', err.message);
       alert('Something went wrong. Please try again.');
       submitBtn.disabled = false;
-      submitBtn.innerText = 'Join Waitlist';
+      submitBtn.innerText = 'Join the Founding 500';
     }
   }
 
