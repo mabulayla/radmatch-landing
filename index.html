@@ -39,6 +39,8 @@
       --emerald:        #059669;
       --emerald-light:  #10b981;
       --emerald-dim:    rgba(5, 150, 105, 0.15);
+      --coral:          #FF7F50;
+      --coral-light:    #ff9a76;
       --glass-bg:       rgba(16, 14, 42, 0.65);
       --glass-border:   rgba(140, 100, 255, 0.18);
       --text-primary:   #eeeaf8;
@@ -215,22 +217,22 @@
     .btn-jump {
       display: inline-block;
       margin-top: 20px; margin-bottom: 4px;
-      padding: 13px 28px;
-      background: transparent;
-      border: 1px solid var(--emerald);
-      border-radius: 3px;
-      font-family: 'DM Mono', monospace; font-size: 0.78rem;
-      font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--emerald-light);
+      padding: 15px 32px;
+      background: var(--coral);
+      border: none;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace; font-size: 0.82rem;
+      font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #fff;
       text-decoration: none;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+      box-shadow: 0 4px 20px rgba(255, 127, 80, 0.35);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
     }
     .btn-jump:hover {
-      background: rgba(5, 150, 105, 0.12);
-      color: #fff;
-      box-shadow: 0 0 18px rgba(5, 150, 105, 0.3);
-      transform: translateY(-1px);
+      background: var(--coral-light);
+      box-shadow: 0 6px 28px rgba(255, 127, 80, 0.5);
+      transform: translateY(-2px);
     }
     .btn-jump:active { transform: translateY(0); }
 
@@ -276,6 +278,14 @@
     .hub-pill:nth-child(4) .hub-dot { animation-delay: 1.5s; }
     .hub-pill:nth-child(5) .hub-dot { animation-delay: 2.0s; }
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .hub-badge {
+      font-family: 'DM Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--coral); border: 1px solid rgba(255, 127, 80, 0.4);
+      padding: 2px 6px; border-radius: 2px;
+      background: rgba(255, 127, 80, 0.08);
+      margin-left: 4px;
+    }
 
     /* ── MODES ── */
     .modes {
@@ -299,19 +309,6 @@
       text-transform: uppercase; margin-bottom: 6px;
     }
     .mode-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.55; }
-
-    /* ── VERIFY BANNER ── */
-    .verify-banner {
-      display: flex; align-items: flex-start; gap: 14px;
-      padding: 16px 20px;
-      border: 1px solid rgba(5, 150, 105, 0.2);
-      border-left: 3px solid var(--emerald);
-      border-radius: 3px; background: rgba(5, 150, 105, 0.06);
-      margin-bottom: 40px;
-    }
-    .verify-icon { font-size: 1rem; margin-top: 1px; flex-shrink: 0; }
-    .verify-text { font-size: 0.83rem; color: rgba(232, 237, 233, 0.7); line-height: 1.6; }
-    .verify-text strong { color: var(--emerald-light); font-weight: 600; }
 
     /* ── FORM LABELS ── */
     .form-label {
@@ -400,14 +397,16 @@
 
     /* ── SUBMIT BUTTON ── */
     .btn-waitlist {
-      background: var(--emerald); color: #fff;
-      border: none; border-radius: 3px;
-      padding: 14px 28px;
-      font-family: 'DM Mono', monospace; font-size: 0.78rem;
-      font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      background: var(--coral); color: #fff;
+      border: none; border-radius: 4px;
+      padding: 16px 28px;
+      font-family: 'DM Mono', monospace; font-size: 0.82rem;
+      font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
       cursor: pointer; white-space: nowrap;
       position: relative; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(255, 127, 80, 0.35);
       transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+      min-height: 52px;
     }
     .btn-waitlist::after {
       content: ''; position: absolute; inset: 0;
@@ -415,8 +414,8 @@
       pointer-events: none;
     }
     .btn-waitlist:hover {
-      background: var(--emerald-light);
-      box-shadow: 0 0 24px rgba(5, 150, 105, 0.4);
+      background: var(--coral-light);
+      box-shadow: 0 6px 28px rgba(255, 127, 80, 0.5);
       transform: translateY(-1px);
     }
     .btn-waitlist:active  { transform: translateY(0); }
@@ -529,11 +528,10 @@
     <h1>THE BREAK ROOM<br>IS <em>EMPTY.</em></h1>
     <p class="free-tag">100% Free for Techs &amp; Students.</p>
     <p class="subhero">
-      Let's fix that. Join the exclusive waitlist for <strong>RadMatch</strong>—the first dating,
-      networking, and community platform built
-      <strong>exclusively for verified Radiology professionals.</strong>
+      Stop scrolling alone. Connect with the only people who actually understand the 12-hour grind.
+      Join the exclusive network for <strong>Imaging Pros.</strong>
     </p>
-    <a href="#form-block" class="btn-jump">Sign Up Free</a>
+    <a href="#form-block" class="btn-jump">Get Early Access</a>
 
     <div class="divider"></div>
 
@@ -542,9 +540,9 @@
     <div class="hubs">
       <div class="hub-pill"><span class="hub-dot"></span>Columbus, OH</div>
       <div class="hub-pill"><span class="hub-dot"></span>Detroit, MI</div>
-      <div class="hub-pill"><span class="hub-dot"></span>San Francisco, CA</div>
-      <div class="hub-pill"><span class="hub-dot"></span>Phoenix, AZ</div>
-      <div class="hub-pill"><span class="hub-dot"></span>Bay Area, CA</div>
+      <div class="hub-pill"><span class="hub-dot"></span>San Francisco, CA<span class="hub-badge">Launching Soon</span></div>
+      <div class="hub-pill"><span class="hub-dot"></span>Phoenix, AZ<span class="hub-badge">Launching Soon</span></div>
+      <div class="hub-pill"><span class="hub-dot"></span>Bay Area, CA<span class="hub-badge">Launching Soon</span></div>
     </div>
 
     <!-- THREE MODES -->
@@ -553,28 +551,18 @@
       <div class="mode-card">
         <span class="mode-icon">&#x1F49B;</span>
         <p class="mode-title">Dating</p>
-        <p class="mode-desc">Meet verified radiology professionals who actually understand your schedule and your world.</p>
+        <p class="mode-desc">Date someone who gets the 12-hour shift.</p>
       </div>
       <div class="mode-card">
         <span class="mode-icon">&#x1F91D;</span>
         <p class="mode-title">Friends</p>
-        <p class="mode-desc">Build genuine friendships with colleagues outside your department and across cities.</p>
+        <p class="mode-desc">Find your people across cities and departments.</p>
       </div>
       <div class="mode-card">
         <span class="mode-icon">&#x1F4E1;</span>
         <p class="mode-title">Networking</p>
-        <p class="mode-desc">Grow your career through peer connections, referrals, and mentorship in radiology.</p>
+        <p class="mode-desc">Referrals, mentorship, and career moves — all in one place.</p>
       </div>
-    </div>
-
-    <!-- VERIFY BANNER -->
-    <div class="verify-banner">
-      <span class="verify-icon">&#x2705;</span>
-      <p class="verify-text">
-        <strong>A Trusted Professional Network.</strong> Connect with verified Imaging Professionals
-        and fellow students. While everyone is welcome, the <strong>Emerald Badge</strong> is reserved
-        strictly for those who authenticate their <strong>ARRT, ARDMS, or NMTCB</strong> credentials.
-      </p>
     </div>
 
     <!-- WAITLIST FORM -->
@@ -618,7 +606,7 @@
         />
         <!-- FIX: onclick calls handleSubmit — no form wrap needed, no default submit conflict -->
         <button type="button" class="btn-waitlist" id="submit-btn" onclick="handleSubmit()">
-          Join Waitlist
+          Join the Founding 500
         </button>
       </div>
       <p class="form-note" id="form-note">// No spam. Early access guaranteed. Unsubscribe anytime.</p>
